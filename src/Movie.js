@@ -24,26 +24,25 @@ export function Movie({ id }) {
         const { data: { movie: { id, year, like_count, yt_trailer_code, genres, description_full, cast, background_image_original } } } = results;
         console.log(yt_trailer_code);
         return (
-            <>
-                <iframe width='560' height='315' src={`https://www.youtube.com/embed/${yt_trailer_code}`} />
+            <div className="w-100">
+                <iframe className="w-75 " height={400} src={`https://www.youtube.com/embed/${yt_trailer_code}`} />
                 <Figure>
                     <Figure.Image
-                        width={500}
+                       className="w-75"
                         height={500}
                         alt={background_image_original}
                         src={background_image_original}
                     />
-                    <Figure.Caption>
+                    <div className="w-100">
+                    <h3 className="lead w-75 h-25 d-flex justify-content-center ">
                         {description_full}
-                    </Figure.Caption>
+                    </h3>
+                    </div>
+                   
                 </Figure>
                 <ListGroup>
                     <ListGroup className="d-flex flex-row">
-                        <Form.Label className="w-25 border border-secondary">id</Form.Label>
-                        <ListGroup.Item className="w-75">  {id}</ListGroup.Item>
-                    </ListGroup>
-                    <ListGroup className="d-flex flex-row">
-                        <Form.Label className="w-25 border border-secondary">year</Form.Label>
+                        <Form.Label className="w-25 border border-secondary">Released Year</Form.Label>
                         <ListGroup.Item className="w-75">  {year}</ListGroup.Item>
                     </ListGroup>
                     <ListGroup className="d-flex flex-row">
@@ -60,7 +59,7 @@ export function Movie({ id }) {
                 <h2>{cast && cast.map((t) => {
                     const { character_name, name, imdb_code } = t;
                     return (
-                        <>
+                        <ListGroup>
                             <ListGroup className="d-flex flex-row">
                                 <Form.Label className="w-25">character_name</Form.Label>
                                 <ListGroup.Item className="w-75">  {character_name}</ListGroup.Item>
@@ -73,11 +72,11 @@ export function Movie({ id }) {
                                 <Form.Label className="w-25">imdb code</Form.Label>
                                 <ListGroup.Item className="w-75">  {imdb_code}</ListGroup.Item>
                             </ListGroup>
-                        </>
+                        </ListGroup>
                     )
 
                 })}</h2>
-            </>
+            </div>
         )
     }
 

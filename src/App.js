@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { MovieApp } from './Movieapp';
 import { useState } from 'react';
+import projectlogo from './projectlogo.jpg';
 function App() {
   const [search,setSearchText]=useState('');
 
@@ -11,16 +12,17 @@ console.log(event.target.value);
 setSearchText(event.target.value);
   }
   return (
-    <div className="App w-100 vh-100 ">
-      <h2>movie app </h2>
-     
-      <Form className='d-flex flex-column  w-100  mt-5 '>
-        <Form.Group className="mb-3 w-50 justify-content-center " controlId="formSearch">
+    <div className="App p-2  bg-light rounded-3 ">
+      <h1 className='display-2'> Movie Search App  </h1>
+      <img className='w-100' height={500}  src={projectlogo}alt=''/>
+      <Form className=' mt-5 '>
+        <Form.Group className="mb-3 d-flex justify-content-center  " controlId="formSearch">
          
-          <Form.Control type="text" placeholder="Enter your search" onChange={handleChange} />
+          <Form.Control className='w-25 h-50  ' type="text" placeholder="Enter your search" onChange={handleChange} />
         </Form.Group>
       </Form>
       <MovieApp searchText={search}/>
+      
     </div>
   );
 }
