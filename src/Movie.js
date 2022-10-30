@@ -47,11 +47,11 @@ export function Movie({ id }) {
                         <ListGroup.Item className="w-75">  {year}</ListGroup.Item>
                     </ListGroup>
                     <ListGroup className="d-flex flex-row my-2">
-                        <Form.Label className="w-25 ">like count</Form.Label>
+                        <Form.Label className="w-25 ">Like count</Form.Label>
                         <ListGroup.Item className="w-75"> {like_count}</ListGroup.Item>
                     </ListGroup>
                     <ListGroup className="d-flex flex-row my-2">
-                        <Form.Label className="w-25 ">description_ful</Form.Label>
+                        <Form.Label className="w-25 ">Full Description</Form.Label>
                         <ListGroup.Item className="w-75">  {description_full}</ListGroup.Item>
                     </ListGroup>
 
@@ -64,12 +64,12 @@ export function Movie({ id }) {
                        
                         <ListGroup className="my-2 mx-5">
                             <ListGroup className="d-flex flex-row">
-                                <Form.Label className="d-flex w-25 justify-content-center align-items-center">character_name {index+1}</Form.Label>
+                                <Form.Label className="d-flex w-25 justify-content-center align-items-center">character Name {index+1}</Form.Label>
                                 <ListGroup.Item className="w-75"> {character_name} </ListGroup.Item>
                                
                             </ListGroup>
                             <ListGroup className="d-flex flex-row">
-                                <Form.Label className="w-25 d-flex justify-content-center  align-items-center">Actor name</Form.Label>
+                                <Form.Label className="w-25 d-flex justify-content-center  align-items-center">Actor Name</Form.Label>
                                 <ListGroup.Item className="w-75"> 
                                 <a className="   d-flex justify-content-center" target="_blank" href={`https://www.imdb.com/name/nm${imdb_code}/?ref_=tt_ov_wr`}>{name}</a>
                                  </ListGroup.Item>
