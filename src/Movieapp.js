@@ -69,7 +69,9 @@ export function MovieApp({ searchText }) {
     }, [searchText])
     return (
         <>
-            {!showMovie&&results && Object.keys(results).length && showResults()}
+            {(!showMovie&&results && Object.keys(results).length && showResults() || <b>
+                Enter any movie name here
+            </b>)}
             {showMovie && <Movie id={id}/>}
 
         </>
