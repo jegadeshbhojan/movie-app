@@ -66,6 +66,7 @@ export function MovieApp({ searchText }) {
 
     useEffect(() => {
         fetchApi();
+        setShowMovie(false);
     }, [searchText])
     return (
         <>
