@@ -34,48 +34,53 @@ export function Movie({ id }) {
                         src={background_image_original}
                     />
                     <div className="w-100 d-flex  justify-content-center">
-                    <h3 className=" display-4 w-75 h-25  ">
+                    <i className=" mt-4 w-75 h-25 text-primary ">
                         {description_full}
-                    </h3>
+                    </i>
                     </div>
                    
                 </Figure>
-                <ListGroup>
-                    <ListGroup className="d-flex flex-row">
-                        <Form.Label className="w-25 border border-secondary">Released Year</Form.Label>
+                <h5 className=" mt-2 d-flex  justify-content-center ">Other details of the Movie</h5>
+                <ListGroup className="mx-5">
+                    <ListGroup className="d-flex flex-row my-2">
+                        <Form.Label className="w-25 align-items-center">Released Year</Form.Label>
                         <ListGroup.Item className="w-75">  {year}</ListGroup.Item>
                     </ListGroup>
-                    <ListGroup className="d-flex flex-row">
-                        <Form.Label className="w-25 border border-secondary">like count</Form.Label>
+                    <ListGroup className="d-flex flex-row my-2">
+                        <Form.Label className="w-25 ">like count</Form.Label>
                         <ListGroup.Item className="w-75"> {like_count}</ListGroup.Item>
                     </ListGroup>
-                    <ListGroup className="d-flex flex-row">
-                        <Form.Label className="w-25 border border-secondary">description_ful</Form.Label>
+                    <ListGroup className="d-flex flex-row my-2">
+                        <Form.Label className="w-25 ">description_ful</Form.Label>
                         <ListGroup.Item className="w-75">  {description_full}</ListGroup.Item>
                     </ListGroup>
 
                 </ListGroup>
-
-                <h2>{cast && cast.map((t) => {
+                
+                <>{cast && cast.map((t,index) => {
                     const { character_name, name, imdb_code } = t;
                     return (
-                        <ListGroup>
+                        <>
+                       
+                        <ListGroup className="my-2 mx-5">
                             <ListGroup className="d-flex flex-row">
-                                <Form.Label className="w-25">character_name</Form.Label>
-                                <ListGroup.Item className="w-75">  {character_name}</ListGroup.Item>
+                                <Form.Label className="d-flex w-25 justify-content-center align-items-center">character_name {index+1}</Form.Label>
+                                <ListGroup.Item className="w-75"> {character_name} </ListGroup.Item>
+                               
                             </ListGroup>
                             <ListGroup className="d-flex flex-row">
-                                <Form.Label className="w-25">name</Form.Label>
-                                <ListGroup.Item className="w-75">  {name}</ListGroup.Item>
-                            </ListGroup>
-                            <ListGroup className="d-flex flex-row">
-                                <Form.Label className="w-25">imdb code</Form.Label>
-                                <ListGroup.Item className="w-75">  {imdb_code}</ListGroup.Item>
+                                <Form.Label className="w-25 d-flex justify-content-center  align-items-center">Actor name</Form.Label>
+                                <ListGroup.Item className="w-75"> 
+                                <a className="   d-flex justify-content-center" target="_blank" href={`https://www.imdb.com/name/nm${imdb_code}/?ref_=tt_ov_wr`}>{name}</a>
+                                 </ListGroup.Item>
+                                
                             </ListGroup>
                         </ListGroup>
+                        </>
+                        
                     )
 
-                })}</h2>
+                })}</>
             </div>
         )
     }
