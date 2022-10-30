@@ -25,16 +25,16 @@ export function Movie({ id }) {
         console.log(yt_trailer_code);
         return (
             <div className="w-100">
-                <iframe className="w-75 " height={400} src={`https://www.youtube.com/embed/${yt_trailer_code}`} />
+                <iframe className="w-75 border border-secondary rounded" height={400} src={`https://www.youtube.com/embed/${yt_trailer_code}`} />
                 <Figure>
                     <Figure.Image
-                       className="w-75"
+                       className="w-75 border border-secondary rounded"
                         height={500}
                         alt={background_image_original}
                         src={background_image_original}
                     />
-                    <div className="w-100">
-                    <h3 className="lead w-75 h-25 d-flex justify-content-center ">
+                    <div className="w-100 d-flex  justify-content-center">
+                    <h3 className=" display-4 w-75 h-25  ">
                         {description_full}
                     </h3>
                     </div>
